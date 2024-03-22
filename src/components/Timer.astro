@@ -1,29 +1,53 @@
 ---
+let timeleft = {
+  days: 20,
+  hours: 2,
+  minutes: 30,
+  seconds: 43,
+};
+let x = setInterval(() => {
+  const countDownDate = new Date("April 20, 2024 09:00:00").getTime();
+  var now = new Date().getTime();
+    var distance = countDownDate - now;
 
+    timeleft.days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    timeleft.hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    timeleft.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    timeleft.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    if (distance < 0) {
+      clearInterval(x);
+    }
+}, 1000);
 ---
+
+<script>
+</script>
 
 <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
   <div class="flex flex-col">
     <span class="countdown font-mono text-5xl">
-      <span style="--value:15;"></span>
+      <span style=`--value:${timeleft.days};`></span>
     </span>
     days
   </div>
   <div class="flex flex-col">
     <span class="countdown font-mono text-5xl">
-      <span style="--value:10;"></span>
+      <span style=`--value:${timeleft.hours};`></span>
     </span>
     hours
   </div>
   <div class="flex flex-col">
     <span class="countdown font-mono text-5xl">
-      <span style="--value:24;"></span>
+      <span style=`--value:${timeleft.minutes};`></span>
     </span>
     min
   </div>
   <div class="flex flex-col">
     <span class="countdown font-mono text-5xl">
-      <span style="--value:48;"></span>
+      <span style=`--value:${timeleft.seconds};`></span>
     </span>
     sec
   </div>

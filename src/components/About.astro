@@ -3,16 +3,14 @@ import { Image } from 'astro:assets';
 import aboutImage from "../img/aboutpic.svg";
 ---
 
-<section class="py-28">
-  <div class="max-w-5xl mx-auto flex justify-between items-center">
-    <div class="max-w-lg">
-      <h1 class="text-3xl font-bold my-4">About this hackathon</h1>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae
-        veritatis ex laborum at natus, veniam nostrum magnam, distinctio placeat
-        accusamus fuga beatae blanditiis, ab exercitationem modi soluta.
-        Repudiandae, eligendi ipsum!
+<section class="py-28" id="about">
+  <div class="max-w-5xl mx-auto flex-wrap-reverse flex justify-between items-center px-3">
+    <div class="max-w-lg md:mt-8">
+      <h1 class="text-3xl font-bold my-4">Что-за хакатон?</h1>
+      <p class=" my-6">
+        Google developer students hackathon - 26 часовой хакатон для студентов бакалавриата, магистратуры и докторантуры AITU, который будет проходить в Astana IT University 20-21 апреля.
       </p>
+      <a href="#agenda" class="link link-primary my-5 text-xl link-hover">Программа хакатона 👇</a>
     </div>
     <Image src={aboutImage} alt='About img' width={400}/>
   </div>

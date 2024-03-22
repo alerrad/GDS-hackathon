@@ -1,4 +1,8 @@
-<div class="navbar bg-base-100">
+---
+import logo from '../img/logo.png';
+---
+
+<div class="navbar bg-base-100 fixed top-0 left-0 z-50">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -19,24 +23,23 @@
         tabindex="0"
         class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
       >
-        <li><a>About</a></li>
-        <li><a>Program</a></li>
-        <li><a>Prizes</a></li>
-        <li><a>Program</a></li>
-        <li><a>Participation</a></li>
-        <li><a>FAQ</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#prizes">Prizes</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
-    <a class="btn btn-ghost text-xl">GDS hack</a>
+    <a class="btn btn-ghost text-xl">
+      <img src={logo.src} alt='idk' height={40} width={40}/>
+      GDS hackathon
+    </a>
   </div>
   <div class="navbar-end hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a>About</a></li>
-        <li><a>Program</a></li>
-        <li><a>Prizes</a></li>
-        <li><a>Program</a></li>
-        <li><a>Participation</a></li>
-        <li><a>FAQ</a></li>
+      <li><a href="#sponsors">Sponsors</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#prizes">Prizes</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
   </div>
 </div>
