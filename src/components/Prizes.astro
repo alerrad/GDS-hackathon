@@ -1,6 +1,11 @@
-<section class="py-20" id="prizes">
+---
+import confetti1 from "../img/confetti.png";
+import confetti2 from "../img/confetti1.png";
+---
+
+<section class="py-20 relative" id="prizes">
   <div class="max-w-5xl mx-auto">
-    <h1 class="text-3xl font-bold my-4 text-center">Prize pool 🏆</h1>
+    <h1 class="text-3xl font-bold my-4 text-center">Призовой фонд 🏆</h1>
     <div class="flex flex-wrap justify-around items-center">
       <div class="card w-80 bg-base-100 shadow-xl my-5 mx-3">
         <div class="card-body">
@@ -22,4 +27,6 @@
       </div>
     </div>
   </div>
+  <img src={confetti1.src} alt="" width="200" class="hidden md:block absolute bottom-5 left-6">
+  <img src={confetti2.src} alt="" width="450"  class="absolute bottom-2 right-3 -z-20">
 </section>

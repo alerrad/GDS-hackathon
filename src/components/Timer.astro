@@ -1,54 +1,48 @@
----
-let timeleft = {
-  days: 20,
-  hours: 2,
-  minutes: 30,
-  seconds: 43,
-};
-let x = setInterval(() => {
-  const countDownDate = new Date("April 20, 2024 09:00:00").getTime();
-  var now = new Date().getTime();
+<script>
+  const days_span = document.getElementById("days");
+  const hours_span = document.getElementById("hours");
+  const minutes_span = document.getElementById("minutes");
+  const seconds_span = document.getElementById("seconds");
+
+  let x = setInterval(() => {
+    const countDownDate = new Date("April 20, 2024 09:00:00").getTime();
+    var now = new Date().getTime();
     var distance = countDownDate - now;
 
-    timeleft.days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    timeleft.hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    timeleft.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    timeleft.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    days_span.style.setProperty("--value", String(Math.floor(distance / (1000 * 60 * 60 * 24))));
+    hours_span.style.setProperty("--value", Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString());
+    minutes_span.style.setProperty("--value", Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString());
+    seconds_span.style.setProperty("--value", Math.floor((distance % (1000 * 60)) / 1000).toString());
 
     if (distance < 0) {
       clearInterval(x);
     }
-}, 1000);
----
-
-<script>
+  }, 1000);
 </script>
 
 <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
   <div class="flex flex-col">
     <span class="countdown font-mono text-5xl">
-      <span style=`--value:${timeleft.days};`></span>
+      <span id="days"></span>
     </span>
-    days
+    Дней
   </div>
   <div class="flex flex-col">
     <span class="countdown font-mono text-5xl">
-      <span style=`--value:${timeleft.hours};`></span>
+      <span style=`--value:4` id="hours"></span>
     </span>
-    hours
+    Часов
   </div>
   <div class="flex flex-col">
     <span class="countdown font-mono text-5xl">
-      <span style=`--value:${timeleft.minutes};`></span>
+      <span style=`--value:4` id="minutes"></span>
     </span>
-    min
+    Минут
   </div>
   <div class="flex flex-col">
     <span class="countdown font-mono text-5xl">
-      <span style=`--value:${timeleft.seconds};`></span>
+      <span style=`--value:5` id="seconds"></span>
     </span>
-    sec
+    Секунд
   </div>
 </div>
